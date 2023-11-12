@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Test" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+        <item name="colorPrimary">@color/Light_green</item> <!-- action bar & buttons -->
+        <item name="colorPrimaryVariant">@color/test</item> <!--  -->
+        <item name="colorOnPrimary">@color/white_green</item> <!-- button txt -->
+
+        <item name="colorSecondary">@color/Light_green</item> <!-- select txt box -->
+        <item name="colorSecondaryVariant">@color/test</item> <!--  -->
+        <item name="colorOnSecondary">@color/test</item> <!--  -->
+
+        <item name="android:statusBarColor">@color/Dark_green</item> <!-- Status bar -->
+
+        <item name="android:textColor">@color/white_green</item>
+        <item name="android:colorBackground">@color/black_green</item>
+        <item name="android:navigationBarColor">@color/Light_green</item>
+
+        <item name="colorSurface">@color/Light_green</item>
+        <item name="colorOnSurface">@color/Light_green</item>
+    </style>
+</resources>
