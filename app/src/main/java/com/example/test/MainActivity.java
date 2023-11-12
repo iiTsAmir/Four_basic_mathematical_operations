@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Objects;
-//import java.util.Scanner;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
         Objects.requireNonNull(getSupportActionBar()).setTitle("");
 
         EditText number1 = findViewById(R.id.text1);
@@ -35,18 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                /*
-                Scanner check1 = new Scanner(number1.getText()+"");
-                Scanner check2 = new Scanner(number2.getText()+"");
-                if(!check1.hasNextInt() || !check2.hasNextInt()) {
-                    result.setText(error);
-                    return;
-                }
-                check1.close();
-                check2.close();
-                */ // validate number with Scanner
-
-                if(checkNumber(number1.getText()+"") || checkNumber(number2.getText()+"")) {
+                if(isntNumber(number1.getText()+"") || isntNumber(number2.getText()+"")) {
                     result.setText(error);
                     return;
                 }
@@ -70,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(checkNumber(number1.getText()+"") || checkNumber(number2.getText()+"")) {
+                if(isntNumber(number1.getText()+"") || isntNumber(number2.getText()+"")) {
                     result.setText(error);
                     return;
                 }
@@ -94,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(checkNumber(number1.getText()+"") || checkNumber(number2.getText()+"")) {
+                if(isntNumber(number1.getText()+"") || isntNumber(number2.getText()+"")) {
                     result.setText(error);
                     return;
                 }
@@ -118,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(checkNumber(number1.getText()+"") || checkNumber(number2.getText()+"")) {
+                if(isntNumber(number1.getText()+"") || isntNumber(number2.getText()+"")) {
                     result.setText(error);
                     return;
                 }
@@ -146,19 +135,24 @@ public class MainActivity extends AppCompatActivity {
                 mark.setText("");
                 number2.setText("");
                 result.setText("");
-
             }
         });
 
 
     }
 
-    private boolean checkNumber (String input){
+    private boolean isntNumber (String input){
 
         String regex = "-?[0-9]+[.]?[0-9]*";
         return !Pattern.matches(regex,input);
 
     }
+
+    private boolean isNumberWsc (String input){
+        Scanner sc = new Scanner(input);
+        return sc.hasNextFloat();
+    }
+
 
     private boolean checkDecimal (float input){
 
